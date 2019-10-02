@@ -15,7 +15,7 @@ export class TableComponent implements OnInit {
   config: any;
   star:any=[];
   star_fav:any=[];
-  
+  filtertext:any;
 
   constructor( private listService:ListService) { }
 
