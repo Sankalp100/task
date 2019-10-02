@@ -10,7 +10,7 @@
             </div>
             <div class="search">
                 <select class="custom-select" [(ngModel)]="city" (change)="select_city($event)">
-                    <option selected>Mumbai</option>
+                    <option selected value="MUMBAI">Mumbai</option>
                     <option value="NEW DELHI">New Delhi</option>
                     <option value="PUNE">Pune</option>
                     <option value="JAIPUR">Jaipur</option>
@@ -30,7 +30,7 @@
                         <th scope="col">City</th>
                         <th scope="col">District</th>
                         <th scope="col">State</th>
-                        <th scope="col">Favorite</th>
+                        <th scope="col">Favourite</th>
                     </tr>
                 </thead>
                 <tbody>
