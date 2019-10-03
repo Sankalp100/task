@@ -39,7 +39,7 @@ export class TableComponent implements OnInit {
 
     })
     this.config = {
-      itemsPerPage: 15,
+      itemsPerPage: 8,
       currentPage: 1,
       totalItems: this.banks
     };

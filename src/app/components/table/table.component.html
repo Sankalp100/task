@@ -41,16 +41,21 @@
                         <td>{{b.city}}</td>
                         <td>{{b.district}}</td>
                         <td>{{b.state}}</td>
-                        <td *ngIf="star_fav[b.ifsc]===1; else elseBlock" ><i class="fas fa-star" (click)="fav(b.ifsc,0)"></i></td>
-                        <ng-template #elseBlock><td><i class="far fa-star" (click)="fav(b.ifsc,1)"></i></td></ng-template>
-                        
+                        <td *ngIf="star_fav[b.ifsc]===1; else elseBlock"><i class="fas fa-star"
+                                (click)="fav(b.ifsc,0)"></i></td>
+                        <ng-template #elseBlock>
+                            <td><i class="far fa-star" (click)="fav(b.ifsc,1)"></i></td>
+                        </ng-template>
+
 
                     <tr>
 
 
                 </tbody>
             </table>
-            <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+            <div class="pagination">
+                <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+            </div>
         </div>
     </section>
 
