@@ -24,8 +24,12 @@ export class TableComponent implements OnInit {
     //   this.banks = data;
     // })
     console.log(!!localStorage.getItem("fav"))
-    if(!!!localStorage.getItem("fav"))
-    localStorage.setItem("fav","0")
+    if(!!!localStorage.getItem("fav")){
+      var arrayData = new Array(); 
+      // arrayData.push({bank:"na",ifsc:"na"})
+      localStorage.setItem("fav","0")
+      localStorage.setItem("data",JSON.stringify(arrayData))
+    }
     this.star = localStorage.getItem("fav").split(",");
     console.log((this.star))
     this.star.map((v,i)=> {
@@ -57,28 +61,35 @@ export class TableComponent implements OnInit {
   pageChanged(event){
     this.config.currentPage = event;
   }
- fav(id,value){
+ fav(id,value,data){
    console.log(value)
    let fav =localStorage.getItem('fav');
+   var favouriteData = JSON.parse(localStorage.getItem("data"))
    console.log(value==='1')
    console.log(value==1)
    console.log(value=='1')
    console.log(value==0)
    if (value==1){
+     favouriteData.push(data)
+    console.log(favouriteData)
     fav+=","+id;
     localStorage.setItem("fav",fav)
+    localStorage.setItem("data",JSON.stringify(favouriteData))
    
   }
     else{
       this.star = localStorage.getItem("fav").split(",");
+      var favouriteData = JSON.parse(localStorage.getItem("data"))
       this.star_fav[id]="0";
       this.star.map((v,i)=>{
         if(v==id){
           console.log("delete")
+          favouriteData.splice(i-1,1);
            this.star.splice(i,1);
         }
       })
       localStorage.setItem("fav",this.star.toString())
+      localStorage.setItem("data",JSON.stringify(favouriteData))
     }
     this.star = localStorage.getItem("fav").split(",");
     console.log((this.star))
