@@ -4,9 +4,9 @@ import { FavListComponent } from './components/fav-list/fav-list.component';
 import { TableComponent } from './components/table/table.component';
 
 const routes: Routes = [
-  {path:'home', component: TableComponent},
-  {path:'Fav', component: FavListComponent},
-  {path: '', redirectTo:'/home', pathMatch: 'full'}
+  {path:'/', component: TableComponent},
+  {path:'favourite', component: FavListComponent},
+  {path: '', redirectTo:'/', pathMatch: 'full'}
 ];
 
 @NgModule({

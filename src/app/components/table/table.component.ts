@@ -57,7 +57,7 @@ export class TableComponent implements OnInit {
       console.log(data)
     })
   
-  }
+  } 
   pageChanged(event){
     this.config.currentPage = event;
   }
